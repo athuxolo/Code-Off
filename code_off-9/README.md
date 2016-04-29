@@ -1,12 +1,13 @@
-#Code Off #8 - Bomberman: The bomb has been planted
+#Code Off #9 - Bomberman: Aftermath
 
 ##Premise
 With reference to the [Entelect Challenge](http://challenge.entelect.co.za).
-You're bomberman. You're given a block of walls and bombs. You need to determine the destroyed walls after the explosion occurs.
+You're bomberman. You're given a block of walls that have been exploded. You need to determine the sequence of bombs used to destory the walls.
+Please see Code Off #8 as a reference.
 
 ##Challenge
 The radius of walls destroyed by a bomb is specified by the number on the bomb. Each bomb explodes verically and horizontally, but never diagonally. If a bomb is adjacent to another bomb (vertically, horizontally, or diagonally) it's radius increases by 1 for each adjacent bomb.
-Determine the outcome of the explosion by marking destroyed walls and bombs with *.
+Determine the position and radius of the bombs by marking them on the map.
 
 ##Legend
 ```
@@ -26,29 +27,6 @@ An example input text file:
 ```
 ################
 ################
-################
-################
-#####2##########
-##########3#####
-################
-#####1##########
-######1#########
-################
-################
-################
-################
-################
-################
-################
-
-```
-
-###Output
-A text file in the following format.
-
-```
-################
-################
 #####*####*#####
 #####*####*#####
 ###*****##*#####
@@ -63,6 +41,27 @@ A text file in the following format.
 ################
 ################
 ################
+```
+
+###Output
+A text file in the following format:
 
 ```
-Notice that the destroyed walls and bombs are marked with *. Also, the bombs with radius 1 that were adjacent to each other had their radius increased to 2.
+################
+################
+################
+################
+#####2##########
+##########3#####
+################
+#####1##########
+######1#########
+################
+################
+################
+################
+################
+################
+################
+```
+Notice that the bombs are placed in positions and with radius' that will result in the final explosion.
